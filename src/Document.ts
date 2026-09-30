@@ -23,8 +23,11 @@ export interface DocumentContent extends DocumentMetadata {
  * Kuzzle document
  *
  * @deprecated Use "KDocument" interface
+ *
+ * An interface here: in kuzzle-sdk it is a class, which a types-only package
+ * cannot carry. `kuzzle-sdk` keeps its class, whose instances are this shape.
  */
-export class Document {
+export interface Document {
   /**
    * Document unique ID
    */
