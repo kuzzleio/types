@@ -1,5 +1,5 @@
-import { JSONObject } from "./JSONObject";
-import { KDocumentContentGeneric } from ".";
+import type { JSONObject } from "./JSONObject";
+import type { KDocumentContentGeneric } from ".";
 
 /**
  * Enum for notification types
@@ -120,6 +120,4 @@ export interface ServerNotification extends BaseNotification {
  * Real-time notifications sent by Kuzzle.
  */
 export type Notification =
-  | DocumentNotification
-  | UserNotification
-  | ServerNotification;
+  DocumentNotification | UserNotification | ServerNotification;

@@ -1,4 +1,4 @@
-import { JSONObject } from "./JSONObject";
+import type { JSONObject } from "./JSONObject";
 
 /**
  * Represents Kuzzle Metadata.

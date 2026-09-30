@@ -1,4 +1,4 @@
-import { KDocumentContentGeneric } from "./KDocument";
+import type { KDocumentContentGeneric } from "./KDocument";
 
 export type mCreateRequest<TKDocumentContent extends KDocumentContentGeneric> =
   Array<{

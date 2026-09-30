@@ -1,5 +1,5 @@
-import { JSONObject } from "./JSONObject";
-import { KDocumentKuzzleInfo } from "./KDocument";
+import type { JSONObject } from "./JSONObject";
+import type { KDocumentKuzzleInfo } from "./KDocument";
 
 /**
  * Kuzzle metadata

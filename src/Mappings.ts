@@ -1,4 +1,4 @@
-import { JSONObject } from "./JSONObject";
+import type { JSONObject } from "./JSONObject";
 
 type PropertyObject = {
   properties?: MappingsProperties;
@@ -18,9 +18,7 @@ type PropertyType = {
 };
 
 export type MappingsProperties =
-  | PropertyObject
-  | PropertyDynamic
-  | PropertyType;
+  PropertyObject | PropertyDynamic | PropertyType;
 
 /**
  * Collection mappings definition

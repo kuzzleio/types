@@ -1,4 +1,4 @@
-import { JSONObject } from "./JSONObject";
+import type { JSONObject } from "./JSONObject";
 
 export interface BaseRequest extends JSONObject {
   controller: string;
