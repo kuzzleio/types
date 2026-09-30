@@ -1,6 +1,7 @@
 // Every type of this package is the one kuzzle-sdk 7.17.1 exports under the
 // same name — the seed was a copy, so `kuzzle` and `kuzzle-sdk` can re-export
-// these without changing a single type their users see. Type-checked by
+// these without changing a single type their users see — or, where noted, a
+// superset of it that still assigns both ways. Type-checked by
 // `npm run test:types`; a divergence fails the build.
 import type * as Sdk from "kuzzle-sdk";
 
@@ -56,9 +57,24 @@ assert<Equals<Own.Notification, Sdk.Notification>>();
 assert<Equals<Own.ProfilePolicy, Sdk.ProfilePolicy>>();
 // RequestPayload.ts
 assert<Equals<Own.RequestPayload, Sdk.RequestPayload>>();
-// ResponsePayload.ts
-assert<Equals<Own.ResponsePayload, Sdk.ResponsePayload>>();
-assert<Equals<Own.ResponsePayload<Content>, Sdk.ResponsePayload<Content>>>();
+// ResponsePayload.ts — one addition since the seed: the optional
+// `error.props`, which Kuzzle has always sent. Everything else is identical,
+// and each type still assigns to the other, so the addition breaks no one.
+type SdkError = NonNullable<Sdk.ResponsePayload["error"]>;
+type OwnError = NonNullable<Own.ResponsePayload["error"]>;
+assert<
+  Equals<Omit<Own.ResponsePayload, "error">, Omit<Sdk.ResponsePayload, "error">>
+>();
+assert<
+  Equals<
+    Omit<Own.ResponsePayload<Content>, "error">,
+    Omit<Sdk.ResponsePayload<Content>, "error">
+  >
+>();
+assert<Equals<Omit<OwnError, "props">, SdkError>>();
+assert<Equals<OwnError["props"], string[] | undefined>>();
+assert<Mutual<Own.ResponsePayload, Sdk.ResponsePayload>>();
+assert<Mutual<Own.ResponsePayload<Content>, Sdk.ResponsePayload<Content>>>();
 // RoleRightsDefinition.ts
 assert<Equals<Own.RoleRightsDefinition, Sdk.RoleRightsDefinition>>();
 // mRequests.ts

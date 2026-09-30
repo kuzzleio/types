@@ -29,7 +29,7 @@ function label(asset: KDocument<Asset>): string {
 ## Guarantees
 
 - **Types only.** No runtime code and no dependencies, enforced in CI (`npm run test:types-only`). Several copies of this package in one `node_modules` are harmless: its types are structural.
-- **Same types as `kuzzle-sdk` 7.17.1** at the seed, asserted type by type (`tests/sdk-equivalence.ts`). `Document` (deprecated) is the one exception in form: an interface here, a class in the SDK, which keeps it.
+- **Same types as `kuzzle-sdk` 7.17.1** at the seed, asserted type by type (`tests/sdk-equivalence.ts`). `Document` (deprecated) is the one exception in form: an interface here, a class in the SDK, which keeps it. Since then, additions only: optional `ResponsePayload.error.props` (1.1.0).
 - **Semantic versioning.** A change that can break a consumer's type check is a major.
 
 ## Contributing
