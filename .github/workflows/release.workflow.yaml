@@ -40,9 +40,4 @@ jobs:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
           SEMANTIC_RELEASE_NPM_PUBLISH: "true"
           SEMANTIC_RELEASE_SLACK_WEBHOOK: ${{ secrets.SEMANTIC_RELEASE_SLACK_WEBHOOK }}
-          # Bootstrap only: npm trusted publishing (OIDC, what kuzzle and
-          # kuzzle-plugin-s3 use) can only be configured on a package that
-          # already exists. Remove this line once the first version is out and
-          # this workflow is declared as the package's trusted publisher.
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
