@@ -74,6 +74,14 @@ export interface ResponsePayload<TResult = JSONObject> {
      * Error stacktrace (only if NODE_ENV=development)
      */
     stack?: string;
+
+    /**
+     * Values substituted into the error message placeholders, when the error
+     * was built from a documented error code
+     *
+     * @see https://docs.kuzzle.io/core/2/api/errors/error-codes
+     */
+    props?: string[];
   };
 
   /**
