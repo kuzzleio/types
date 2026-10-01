@@ -1,3 +1,9 @@
+## [1.1.0-beta.1](https://github.com/kuzzleio/types/compare/v1.0.0...v1.1.0-beta.1) (2026-10-01)
+
+### Features
+
+* type the error props Kuzzle sends in ResponsePayload.error ([5075559](https://github.com/kuzzleio/types/commit/5075559cc1b47254155ab379413cf768efcd1dc0))
+
 ## 1.0.0 (2026-09-30)
 
 ### Features
