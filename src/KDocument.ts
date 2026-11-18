@@ -10,7 +10,7 @@ export interface KDocumentKuzzleInfo {
   author: string;
 
   /**
-   * Creation date in micro-timestamp
+   * Creation date, in milliseconds since Epoch
    */
   createdAt: number;
 
@@ -20,7 +20,7 @@ export interface KDocumentKuzzleInfo {
   updater: string | null;
 
   /**
-   * Update date in micro-timestamp
+   * Last update date, in milliseconds since Epoch
    */
   updatedAt: number | null;
 }
